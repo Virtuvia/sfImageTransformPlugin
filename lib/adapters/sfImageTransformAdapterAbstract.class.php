@@ -125,6 +125,6 @@ abstract class  sfImageTransformAdapterAbstract
    */
   public function getQuality()
   {
-    return $this->quality;
+    return $this->quality ?? 75;
   }
 }
