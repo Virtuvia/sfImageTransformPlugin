@@ -147,7 +147,7 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
   public function __toString()
   {
     ob_start();
-    $this->__output(false);
+    $this->output(false);
 
     return ob_get_clean();
   }
@@ -159,9 +159,9 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
    */
   public function save()
   {
-    $this->__output(true);
-    
-    return true; 
+    $this->output(true);
+
+    return true;
   }
 
   /**
@@ -183,7 +183,7 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
 
     $this->setFilename($filename);
 
-    return $this->__output(true, $filename);
+    return $this->output(true, $filename);
   }
 
   /**
@@ -246,7 +246,7 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
     {
 
       $this->holder = $resource;
-      
+
       return true;
     }
 
@@ -369,7 +369,7 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
    *
    * @throws sfImageTransformException
    */
-  protected function __output($to_file=false, $filename='')
+  protected function output($to_file=false, $filename='')
   {
     $file = null;
 
@@ -476,7 +476,7 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
         imagefill($dest_resource, 0, 0, $index);
 
         // Set the filled background color to be transparent
-        imagecolortransparent($dest_resource, $index);    
+        imagecolortransparent($dest_resource, $index);
       }
       else if ($this->getMIMEType() == 'image/png') // Always make a transparent background color for PNGs that don't have one allocated already
       {
