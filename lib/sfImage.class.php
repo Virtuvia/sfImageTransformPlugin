@@ -147,15 +147,15 @@ class sfImage
         $y = (int)$defaults['height'];
       }
     }
-  
+
     $this->getAdapter()->create($x, $y);
     $this->getAdapter()->setFilename($defaults['filename']);
-    
+
     // Set the image color if set
     if(is_null($color))
     {
       $color = '#FFFFFF';
-      
+
       if(isset($defaults['color']))
       {
         $color = $defaults['color'];
@@ -163,7 +163,7 @@ class sfImage
     }
 
     $this->fill(0, 0, $color);
-    
+
     return $this;
   }
 
@@ -212,7 +212,7 @@ class sfImage
   public function loadString($string)
   {
     $this->getAdapter()->loadString($string);
-    
+
     return $this;
   }
 
@@ -283,7 +283,7 @@ class sfImage
    * @access public
    * @return string
    */
-  public function __toString()
+  public function __toString(): string
   {
     return $this->toString();
   }
@@ -304,7 +304,7 @@ class sfImage
   /**
    * Magic method. This allows the calling of execute tranform methods on sfImageTranform objects.
    *
-   * @method 
+   * @method
    * @param string $name the name of the transform, sfImage<NAME>
    * @param array Arguments for the transform class execute method
    * @return sfImage
@@ -557,14 +557,14 @@ class sfImage
 
     return $adapter;
   }
- 
+
   /**
    * Copies the image object and returns it
    *
    * Returns a copy of the sfImage object
    *
    * @return sfImage
-   */ 
+   */
   public function __clone()
   {
   	$this->adapter = $this->adapter->copy();

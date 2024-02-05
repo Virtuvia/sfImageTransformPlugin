@@ -144,7 +144,7 @@ class sfImageTransformGDAdapter extends sfImageTransformAdapterAbstract
    *
    * @return string
    */
-  public function __toString()
+  public function __toString(): string
   {
     ob_start();
     $this->output(false);

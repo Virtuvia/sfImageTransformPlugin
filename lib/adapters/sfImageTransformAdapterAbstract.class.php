@@ -67,7 +67,7 @@ abstract class  sfImageTransformAdapterAbstract
 
   abstract public function setMIMEType($mime);
 
-  abstract public function __toString();
+  abstract public function __toString(): string;
 
   abstract public function getAdapterName();
 
