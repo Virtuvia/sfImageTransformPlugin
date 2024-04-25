@@ -161,7 +161,7 @@ class sfImageFillImageMagick extends sfImageTransformAbstract
    */
   public function setBorder($border)
   {
-    if (preg_match('/#[\d\w]{6}/',$border))
+    if ($border !== null && preg_match('/#[\d\w]{6}/',$border))
     {
       $this->border = $border;
 
